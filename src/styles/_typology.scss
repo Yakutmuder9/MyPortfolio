@@ -1,0 +1,53 @@
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    z-index: 2;
+    padding: 0 12px;
+}
+
+.place-items-center {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: $Aquamarine;
+    border-radius: 12px;
+    font-size: medium;
+    color: $navy;
+    border: none;
+    cursor: pointer;
+    &.dark {
+        background: $dark-aquamarine;
+        color: $Aquamarine;
+    }
+}
+
+@keyframes slide-down {
+    from {
+        visibility: visible;
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+        visibility: hidden;
+    }
+}

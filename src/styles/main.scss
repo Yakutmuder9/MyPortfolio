@@ -1,0 +1,55 @@
+@import "_variables";
+@import "./typology";
+@import "components/footer";
+@import "components/navbar";
+@import "pages/landing";
+
+// @import "./components/entrance";
+// @import "components/skill";
+// @import "components/process";
+// @import "components/works";
+// @import "components/web-success";
+// @import "components/FAQs";
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    color: #ffffff;
+}
+
+/*---Side Scroll Bar ---*/
+::-webkit-scrollbar {
+    width: .7vmin;
+}
+::-webkit-scrollbar-track {
+    background: #010101;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #000103ad 0%, #34C8E8 100%);
+    border-radius: 12px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #020610;
+}
+
+body {
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+    background: #040615;
+}
+
+.App {
+    @extend .place-items-center;
+    width: 100%;
+    height: auto;
+}
+

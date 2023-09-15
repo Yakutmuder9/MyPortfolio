@@ -1,0 +1,36 @@
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px;
+    border-bottom: 1px solid #568bfc4a;
+    background: linear-gradient(180deg, #0000007d 100%, #ffffff1a 200%);
+    box-shadow: 0px 4px 24px 0px #23105e40;
+    backdrop-filter: blur(22.5px);
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            img {
+                height: 40px;
+            }
+        }
+        .nav-links ul {
+            display: flex;
+            gap: 28px;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+        }
+        .Get-in-touch .btn {
+            border-radius: 8px;
+            background: #fff;
+            color: black;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+        }
+    }
+}

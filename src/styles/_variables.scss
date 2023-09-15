@@ -1,0 +1,26 @@
+$white: #ffffff;
+$baclk: #000000;
+$grey: #7c7c7c;
+
+$navy: #121504;
+
+$dark-txt: #b4c77f;
+$dark-aquamarine: #2e3f0177;
+$Aquamarine: #bdfd27;
+$Diamond: #ffddbc;
+
+// ---linear-gradient-colors
+$process-wall-bg: linear-gradient(180deg, #1e1e1e 25.91%, #000000 80.15%);
+$num-circle-bg: linear-gradient(83.74deg, #8ef0e3 -25.95%, #3d6dfd 128.43%);
+$faqs-accordian-bg: linear-gradient(89.95deg, #181818 0.06%, #000000 105%);
+$contact-card-bg: linear-gradient(180deg, #171717 0%, #000000 100%);
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+/** Default max width vtex checkout */
+$maxWidth: 1200px;
