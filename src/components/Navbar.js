@@ -37,10 +37,9 @@ const Navbar = () => {
   const handleShow = () => setIsNavOpen(!isNavOpen);
   return (
     <nav className={`navbar ${showNavbar ? "active" : ""}`}>
-      <div className="container">
+      <div className="container navbar-large">
         <a href="#app" className="logo">
           <img src={logo} alt="yamhub logo" />
-          
         </a>
         <div className="nav-links">
           <ul>
@@ -59,8 +58,9 @@ const Navbar = () => {
           <button className="btn">Get in touch</button>
         </div>
       </div>
+
       <div className="collapse-menu">
-        {/* <button
+        <button
           className={isNavOpen ? "btn nav-toggler open" : "btn nav-toggler"}
           onClick={handleShow}
         >
@@ -68,38 +68,38 @@ const Navbar = () => {
           <span></span>
           <span></span>
           <span></span>
-        </button> */}
+        </button>
 
-        {/* {isNavOpen ? (
-          <> */}
-        {/* <div
-          className={`open-menu-container ${
-            isNavOpen ? "slide-down" : "slide-up"
-          }`}
-        >
-          <div id="menu" ref={menuRef} data-active-index={activeIndex}>
-            <div id="menu-items">
-              <div className="menu-item" onClick={handleShow}>
-                <a href="#">Service</a>
-              </div>
-              <div className="menu-item" onClick={handleShow}>
-                <a href="#about">Process</a>
-              </div>
-              <div className="menu-item" onClick={handleShow}>
-                <a href="#projects">Projects</a>
-              </div>
-              <div className="menu-item" onClick={handleShow}>
-                <a href="#contact">Contact</a>
+        {isNavOpen ? (
+          <>
+            <div
+              className={`open-menu-container ${
+                isNavOpen ? "slide-down" : "slide-up"
+              }`}
+            >
+              <div id="menu" ref={menuRef} data-active-index={activeIndex}>
+                <div id="menu-items">
+                  <div className="menu-item" onClick={handleShow}>
+                    <a href="#">Service</a>
+                  </div>
+                  <div className="menu-item" onClick={handleShow}>
+                    <a href="#about">Process</a>
+                  </div>
+                  <div className="menu-item" onClick={handleShow}>
+                    <a href="#projects">Projects</a>
+                  </div>
+                  <div className="menu-item" onClick={handleShow}>
+                    <a href="#contact">Contact</a>
+                  </div>
+                </div>
+                <div id="menu-background-pattern"></div>
+                <div id="menu-background-image"></div>
               </div>
             </div>
-            <div id="menu-background-pattern"></div>
-            <div id="menu-background-image"></div>
-          </div>
-        </div> */}
-        {/* </>
+          </>
         ) : (
           <></>
-        )} */}
+        )}
       </div>
     </nav>
   );
