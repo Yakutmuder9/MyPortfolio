@@ -1,4 +1,5 @@
 import { footWave, logo } from "../assets/index";
+import { FiPhoneForwarded, FiMail } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -6,73 +7,65 @@ const Footer = () => {
       <footer className="footer">
         <div className="container">
           <div className="foot-left">
-            <div className="foot-logo">
-              <img src={logo} alt="yamhub logo" />
-            </div>
-            <div className="copy-rights">
-              <p>
-                We ara a lorem ipsum dolor sit amet, consectetur adipiscing
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat... Read
-                More Website made by Yakut Ahmedin © 2023. All rights reserved.
-                Web development.
-              </p>
-            </div>
-            <div className="">
-              <div className="foot-pho">
-                <div className="pho-ico"></div>
-                <div className="pho-txt">
-                  <p>Have a question?</p>
-                  <h5>445-591-3269</h5>
-                </div>
+            <div className="footer-socials-link">
+              <h4>CONTACT</h4>
+              <div className="footer-socials-link-txt">
+                <ul className="git-link-Drib">
+                  <li>
+                    <a href="https://www.linkedin.com/in/yakut-ahmedin" target="_blank">Linkedln</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Yakutmuder9"  target="_blank">Github</a>
+                  </li>
+                  <li>
+                    <a href="https://dribbble.com/yakut9/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22yakut9%22&utm_content=%22About%20yakut9%22&utm_medium=Social_Share"  target="_blank">
+                      Dribbble
+                    </a>
+                  </li>
+                </ul>
+                <ul className="sla-dis-team">
+                  <li>
+                    <a href="https://discord.gg/jEjGzsD6"  target="_blank">Discord</a>
+                  </li>
+                  <li>
+                    <a href="https://join.slack.com/t/yamhub/shared_invite/zt-250tej6na-aBwbHkPf_jj2ky3PBCXRag"  target="_blank">Slack</a>
+                  </li>
+                  <li>
+                    <a href="https://www.figma.com/file/q8lPXTdsRIFzjkd1ZHur9b/My-Projects?type=design&node-id=0%3A1&mode=design&t=r6ZcqtThJDg4TRuH-1"  target="_blank">Figma</a>
+                  </li>
+                </ul>
               </div>
-              <div className="foot-em">
-                <div className="mail-ico"></div>
-                <div className="mail-txt">
-                  <p>Contact me at</p>
-                  <h5>yakutmuder9@gmail.com</h5>
-                </div>
-              </div>
-            </div>
-            <div className="foot-nav-links">
-              <ul>
-                <li>
-                  <a href="">About</a>
-                </li>
-                <li>
-                  <a href="">Contact</a>
-                </li>
-                <li>
-                  <a href="">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="">Sitemap</a>
-                </li>
-                <li>
-                  <a href="">Terms of Use</a>
-                </li>
-              </ul>
             </div>
           </div>
 
           <div className="foot-right">
-            <h5>Newsltter</h5>
-            <p>
-              Be the first one to know about discounts, offers and events.
-              Unsubscribe whenever you like.
-            </p>
-            <div className="email-inp-filed">
-              <input type="text" placeholder="Enter your email" />
-              <button>Submit</button>
-            </div>
-            <div className="footer-socials-links">
-              <div className="github-link"></div>
-              <div className="discord-link"></div>
-              <div className="fb-link"></div>
-              <div className="slack-link"></div>
-            </div>
-            <p>© 2023, All Rights Reserved</p>
+            <a href="tel:4455913269">
+              <div className="foot-pho">
+                <div className="pho-ico">
+                  <FiPhoneForwarded />
+                </div>
+                <div className="pho-txt">
+                  <small>Have a question?</small>
+                  <h5>445-591-3269</h5>
+                </div>
+              </div>
+            </a>
+            <a href="mailto:yakutmuder9@gmail.com">
+              <div className="foot-em">
+                <div className="mail-ico">
+                  <FiMail />
+                </div>
+                <div className="mail-txt">
+                  <small>Contact me at</small>
+                  <h5>yakutmuder9@gmail.com</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div className="move-top">
+            <button>
+              Move to <span> top</span>
+            </button>
           </div>
         </div>
       </footer>
