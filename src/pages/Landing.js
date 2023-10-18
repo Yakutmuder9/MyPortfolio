@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import Spline from "@splinetool/react-spline";
+import { landing } from "../assets/index";
 
 const Landing = () => {
   const headlineRef = useRef();
@@ -25,7 +26,7 @@ const Landing = () => {
 
   return (
     <div className="landing" ref={landingtxt}>
-      landing Txt Aniamtion
+      <img src={landing} alt="landing img" />
     </div>
   );
 };

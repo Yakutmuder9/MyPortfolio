@@ -35,25 +35,28 @@ const Navbar = () => {
   }, [prevScrollY]);
 
   const handleShow = () => setIsNavOpen(!isNavOpen);
+
   return (
     <nav className={`navbar ${showNavbar ? "active" : ""}`}>
-      <div className="container navbar-large">
+      <div className="container nav-container">
         <a href="#app" className="logo">
           <img src={logo} alt="yamhub logo" />
         </a>
+
         <div className="nav-links">
           <ul>
-            <li>
-              <a href="#work">Work.</a>
-            </li>
             <li>
               <a href="#about">About.</a>
             </li>
             <li>
-              <a href="#contact">Projects.</a>
+              <a href="#work">Work.</a>
+            </li>
+            <li>
+              <a href="#contact">Contact.</a>
             </li>
           </ul>
         </div>
+
         <div className="Get-in-touch">
           <button className="btn">Get in touch</button>
         </div>
@@ -80,16 +83,16 @@ const Navbar = () => {
               <div id="menu" ref={menuRef} data-active-index={activeIndex}>
                 <div id="menu-items">
                   <div className="menu-item" onClick={handleShow}>
-                    <a href="#">Service</a>
+                    <a href="#about">About.</a>
                   </div>
                   <div className="menu-item" onClick={handleShow}>
-                    <a href="#about">Process</a>
+                    <a href="#work">Work.</a>
                   </div>
                   <div className="menu-item" onClick={handleShow}>
-                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact.</a>
                   </div>
                   <div className="menu-item" onClick={handleShow}>
-                    <a href="#contact">Contact</a>
+                    <a href="#resume">Resume</a>
                   </div>
                 </div>
                 <div id="menu-background-pattern"></div>

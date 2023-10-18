@@ -4,6 +4,9 @@ import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
 import Entrance from "./components/Entrance";
 import Footer from "./components/Footer";
+import Brands from "./pages/Brands";
+import Skills from "./pages/Skills";
+import About from "./pages/About";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,6 +27,9 @@ const App = () => {
           <div className="container">
             <Landing />
           </div>
+          <About />
+          <Skills />
+          <Brands />
           <Footer />
         </>
       )}
