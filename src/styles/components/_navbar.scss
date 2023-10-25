@@ -4,8 +4,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
 
-    top: 12px;
+    top: 0px;
     z-index: 4;
 
     border-bottom: 1px solid #9e9d9d4a;
