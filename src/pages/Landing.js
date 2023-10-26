@@ -35,7 +35,7 @@ const Landing = () => {
         <div className="ellipse-shadow"></div>
 
         <div className="notice">
-          <p>Hi! I'm Yakut Ahmedin. I will . . .</p>
+          <p>Hi! I'm Yakut Ahmedin.</p>
         </div>
 
         <div className="hero-txt">

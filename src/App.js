@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Brands from "./pages/Brands";
 import Skills from "./pages/Skills";
 import About from "./pages/About";
+import Projects from "./pages/Projects";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,6 +30,7 @@ const App = () => {
           </div>
           <About />
           <Skills />
+          <Projects />
           <Brands />
           <Footer />
         </>

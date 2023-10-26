@@ -1,61 +1,41 @@
 .about-page {
 	width: 100%;
-	height: 100vh;
+	height: auto;
 	position: relative;
 	display: flex;
 	align-self: center;
 	justify-content: center;
-	
-	@media (max-width: 768px) {
-		height: 70vh;
-	}
-	@media (max-width: 562px) {
-		height: 50vh;
-	}
-
-	.spoted-rectangle {
-		position: absolute;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100vh;
-
-		@media (max-width: 992px) {
-			height: 80vh;
-		}
-		@media (max-width: 768px) {
-			height: 70vh;
-		}
-		@media (max-width: 562px) {
-			height: 60vh;
-		}
-
-		.rectangle {
-			position: absolute;
-			display: grid;
-			grid-template-columns: repeat(60, 20px);
-			grid-gap: 5px;
-			width: 100%;
-			height: 100%;
-			margin: auto;
-			max-width: 1500px;
-			.spot {
-				width: 2px;
-				height: 2px;
-				background-color: #34c8e8;
-				cursor: pointer;
-			}
-			img {
-				width: 100vw;
-				max-width: 1500px;
-				
-			}
-		}
-	}
 
 	.container {
 		padding-top: 40px;
+
+		.spoted-rectangle {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			z-index: 2;
+
+			.rectangle {
+				position: absolute;
+				display: grid;
+				grid-template-columns: repeat(60, 20px);
+				grid-gap: 5px;
+				width: 100%;
+				height: 100%;
+				margin: auto;
+				max-width: 1500px;
+				.spot {
+					width: 2px;
+					height: 2px;
+					background-color: #34c8e8;
+					cursor: pointer;
+				}
+			}
+		}
 		.about-me-txt {
 			padding-top: 20px;
 			font-size: x-large;
@@ -76,6 +56,16 @@
 			}
 			@media (max-width: 562px) {
 				font-size: medium;
+			}
+
+			img {
+				position: relative;
+				z-index: 4;
+				width: 100%;
+				max-width: 1500px;
+				border-radius: 20px;
+				// background: #01567e;
+				margin: 20px 0px;
 			}
 		}
 	}

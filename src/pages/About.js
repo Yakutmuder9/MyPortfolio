@@ -11,6 +11,7 @@ const About = () => {
 
   return (
     <div className="about-page">
+      <div className="container">
       <div className="spoted-rectangle">
         <div className="rectangle">
           {spots.map((spot, index) => (
@@ -20,10 +21,8 @@ const About = () => {
               onClick={() => toggleSpot(index)}
             ></div>
           ))}
-          <img src={skill} alt="" />
         </div>
       </div>
-      <div className="container">
         <div className="about-me-txt">
           <p>ABOUT ME</p>
         </div>
@@ -32,6 +31,7 @@ const About = () => {
             I'm a discerning <span> full-stack</span> developer, passionately
             crafting top-tier web experiences that blend elegance with impact.
           </h1>
+          <img src={skill} alt="" />
         </div>
       </div>
     </div>
