@@ -2,8 +2,11 @@ import { proDesign } from "../assets/index";
 
 const Brands = () => {
   return (
-    <div>
-      <img src={proDesign} alt="proDesign img" />
+    <div className="brands">
+      {/* <img src={proDesign} alt="proDesign img" /> */}
+      <div className="container">
+        <video src={proDesign} alt="proDesign img" autoPlay loop />
+      </div>
     </div>
   );
 };

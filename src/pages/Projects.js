@@ -216,7 +216,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="works" id="project">
+    <div className="works" id="work">
       <div className="container">
         <div className="dollar-img">
           <img src="" alt="" />
@@ -285,24 +285,24 @@ const Projects = () => {
 
               return (
                 <SwiperSlide className="swiper-slide" key={item.id}>
-                  <a href="#">
-                    <motion.div
-                      className="slide-card"
-                      // ref={processItems[index].ref.ref}
-                      // animate={processItems[index].animation}
-                    >
-                      <img src={item.imgUrl} alt="" />
-                      <div className="work-card-text-cont">
-                        <h4>{item.title} </h4>
-                        <p>{item.disc}</p>
-                      </div>
-                    </motion.div>
-                  </a>
+                  <motion.div
+                    className="slide-card"
+                    // ref={processItems[index].ref.ref}
+                    // animate={processItems[index].animation}
+                  >
+                    <img src={item.imgUrl} alt="" />
+                    <div className="work-card-text-cont">
+                      <h4>{item.title} </h4>
+                      <p>{item.disc}</p>
+                    </div>
+                  </motion.div>
                 </SwiperSlide>
               );
             })}
           </Swiper>
-			<h3> --- Swipe --- </h3>
+          <h3>
+            {"<"} - - - Swipe - - - {">"}
+          </h3>
         </div>
       </div>
     </div>

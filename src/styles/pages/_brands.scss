@@ -1,0 +1,14 @@
+.brands {
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+
+	.container {
+		video {
+			width: 100%;
+			border-radius: 20px;
+		}
+	}
+}

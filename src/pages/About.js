@@ -10,7 +10,7 @@ const About = () => {
   };
 
   return (
-    <div className="about-page">
+    <div className="about-page" id="about">
       <div className="container">
       <div className="spoted-rectangle">
         <div className="rectangle">

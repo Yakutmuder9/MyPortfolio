@@ -4,7 +4,7 @@ import { FiPhoneForwarded, FiMail } from "react-icons/fi";
 const Footer = () => {
   return (
     <>
-      <footer className="footer">
+      <footer className="footer" id="contact">
         <div className="container">
           <div className="foot-left">
             <div className="footer-socials-link">
