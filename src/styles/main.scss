@@ -15,7 +15,6 @@
 // @import "components/web-success";
 // @import "components/FAQs";
 
-
 *,
 ::before,
 ::after {
@@ -30,13 +29,13 @@
 
 /*---Side Scroll Bar ---*/
 ::-webkit-scrollbar {
-    width: .7vmin;
+    width: 0.7vmin;
 }
 ::-webkit-scrollbar-track {
     background: #010101;
 }
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #000103ad 0%, #34C8E8 100%);
+    background: linear-gradient(135deg, #000103ad 0%, #34c8e8 100%);
     border-radius: 12px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -47,7 +46,13 @@ body {
     width: 100%;
     height: auto;
     font-family: "Inter", sans-serif;
+    
+    // background: #18042b;
+    // background: #042425;
+    // background: #233196;
+
     background: #040615;
+    // background: $bgColor;
 }
 
 .App {
@@ -56,3 +61,78 @@ body {
     height: auto;
 }
 
+// entrance
+$bgColor:#020438;
+$boxColor:#020438;
+$waterFColor:#4D6DE3;
+$waterBColor:#C7EEFF;
+
+// body {
+//   background:$bgColor;
+//   font: 14px/1 'Open Sans', helvetica, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+// }
+
+.box {
+    height: 280px;
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $boxColor;
+    border-radius: 100%;
+    overflow: hidden;
+    .percent {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 64px;
+    }
+    .water {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        transform: translate(0, 100%);
+        background: $waterFColor;
+        transition: all 0.3s;
+        &_wave {
+            width: 200%;
+            position: absolute;
+            bottom: 100%;
+            &_back {
+                right: 0;
+                fill: $waterBColor;
+                animation: wave-back 1.4s infinite linear;
+            }
+            &_front {
+                left: 0;
+                fill: $waterFColor;
+                margin-bottom: -1px;
+                animation: wave-front 0.7s infinite linear;
+            }
+        }
+    }
+}
+@keyframes wave-front {
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes wave-back {
+    100% {
+        transform: translate(50%, 0);
+    }
+}

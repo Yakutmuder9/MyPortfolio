@@ -1,32 +1,46 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import { spots } from "../assets/index";
+import { proDesign } from "../assets/index";
+import { gsap } from "gsap/gsap-core";
+// import { SplitText } from "gsap/SplitText"
+import SplitType from "split-type";
 
 const Landing = () => {
-  const headlineRef = useRef();
-  const myText2Ref = useRef();
-
-  const { ref: landingtxt, inView: landingtxtInView } = useInView();
-  const landingTxtAniamtion = useAnimation();
+  const herotxtRef = useRef(null);
+  const heroDiscRef = useRef(null);
 
   useEffect(() => {
-    if (landingtxtInView) {
-      landingTxtAniamtion.start({
-        y: 0,
-        transition: {
-          type: "spring",
+    const herotxt = new SplitType(herotxtRef.current);
+    const heroDisc = new SplitType(heroDiscRef.current, { charClass: "char2" });
+    let t1 = gsap.timeline({ defaults: { ease: "Expo.easeInOut" } });
+
+    t1.from(".char", {
+      y: -100,
+      stagger: 0.05,
+      delay: 1,
+    })
+      .from(".char2", {
+        y: -100,
+        stagger: 0.05,
+        duration: 0.6,
+      })
+      .to(
+        herotxt,
+        heroDisc,
+        {
+          y: -100,
+          stagger: 0.05,
+          duration: 0.6,
         },
-      });
-    } else {
-      landingTxtAniamtion.start({ y: "30vh" });
-    }
-  }, [landingtxtInView]);
+        "-=1.2"
+      );
+  }, []);
 
   return (
-    <div className="landing" ref={landingtxt}>
-
+    <div className="landing">
       <div className="container">
         <img className="bg-video" src={spots} />
         <div className="center-ellipse-line">
@@ -39,11 +53,12 @@ const Landing = () => {
         </div>
 
         <div className="hero-txt">
-          <h1>
-            Turning Creativity <br /> Into Reality
+          <h1 ref={herotxtRef}>
+            Transforming Concepts <br />
+            into Realities
           </h1>
 
-          <p>
+          <p ref={heroDiscRef}>
             Ready to take your project to the next level? I'd love to hear from
             you! Feel free to reach out through my contact page to discuss how
             we can work together to achieve your goals.
@@ -106,14 +121,17 @@ const Landing = () => {
           </svg>
         </div>
 
-        <p className="scroll-txt"> <small>Scroll to explore more</small> </p>
-        <div className="card-with-two-gradient"> 
-        <div className="green-gradient"></div>
-        <div className="red-gradient"></div>
+        <p className="scroll-txt">
+          {" "}
+          <small>Scroll to explore more</small>{" "}
+        </p>
+        <div className="card-with-two-gradient">
+          <div className="green-gradient"></div>
+          <div className="red-gradient"></div>
         </div>
-        <div className="project-cover-promo-card"> </div>
-
-        
+        <div className="project-cover-promo-card">
+          <video src={proDesign} alt="proDesign img" autoPlay loop />
+        </div>
       </div>
     </div>
   );

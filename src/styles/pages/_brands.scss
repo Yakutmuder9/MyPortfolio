@@ -4,11 +4,13 @@
 	display: flex;
 	align-self: center;
 	justify-content: center;
+	padding-bottom: 40px;
 
 	.container {
 		video {
 			width: 100%;
 			border-radius: 20px;
+
 		}
 	}
 }
