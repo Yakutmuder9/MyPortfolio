@@ -39,6 +39,104 @@ const Landing = () => {
       );
   }, []);
 
+  useEffect(() => {
+    const carouselList = document.querySelector(".carousel__list");
+    const carouselItems = document.querySelectorAll(".carousel__item");
+    const elems = Array.from(carouselItems);
+    let intervalId;
+    carouselList.addEventListener("click", function (event) {
+      var newActive = event.target;
+      var isItem = newActive.closest(".carousel__item");
+
+      if (!isItem || newActive.classList.contains("carousel__item_active")) {
+        return;
+      }
+      update(newActive);
+      resetInterval();
+    });
+
+    function update(newActive) {
+      const newActivePos = newActive.dataset.pos;
+
+      const current = elems.find(function (elem) {
+        return elem.dataset.pos == 0;
+      });
+      const prev = elems.find(function (elem) {
+        return elem.dataset.pos == -1;
+      });
+      const next = elems.find(function (elem) {
+        return elem.dataset.pos == 1;
+      });
+      const first = elems.find(function (elem) {
+        return elem.dataset.pos == -2;
+      });
+      const last = elems.find(function (elem) {
+        return elem.dataset.pos == 2;
+      });
+
+      current.classList.remove("carousel__item_active");
+
+      [current, prev, next, first, last].forEach(function (item) {
+        var itemPos = item.dataset.pos;
+
+        item.dataset.pos = getPos(itemPos, newActivePos);
+      });
+    }
+
+    function getPos(current, active) {
+      const diff = current - active;
+
+      if (Math.abs(current - active) > 2) {
+        return -current;
+      }
+      return diff;
+    }
+    function resetInterval() {
+      clearInterval(intervalId);
+      intervalId = setInterval(autoChangeSlide, 20000);
+    }
+    function autoChangeSlide() {
+      const current = elems.find(function (elem) {
+        return elem.dataset.pos == 0;
+      });
+      const next = elems.find(function (elem) {
+        return elem.dataset.pos == 1;
+      });
+      if (next) {
+        update(next);
+      } else {
+        update(elems[0]);
+      }
+    }
+    function handleKeyDown(event) {
+      if (event.key === "ArrowLeft") {
+        const current = elems.find(function (elem) {
+          return elem.dataset.pos == 0;
+        });
+        const prev = elems.find(function (elem) {
+          return elem.dataset.pos == -1;
+        });
+        if (prev) {
+          update(prev);
+          resetInterval();
+        }
+      } else if (event.key === "ArrowRight") {
+        const current = elems.find(function (elem) {
+          return elem.dataset.pos == 0;
+        });
+        const next = elems.find(function (elem) {
+          return elem.dataset.pos == 1;
+        });
+        if (next) {
+          update(next);
+          resetInterval();
+        }
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    resetInterval();
+  }, []);
+
   return (
     <div className="landing">
       <div className="container">
@@ -58,7 +156,7 @@ const Landing = () => {
             into Realities
           </h1>
 
-          <p ref={heroDiscRef}>
+          <p ref={heroDiscRef} id="hero-disc">
             Ready to take your project to the next level? I'd love to hear from
             you! Feel free to reach out through my contact page to discuss how
             we can work together to achieve your goals.
@@ -125,12 +223,31 @@ const Landing = () => {
           {" "}
           <small>Scroll to explore more</small>{" "}
         </p>
-        <div className="card-with-two-gradient">
+        {/* <div className="card-with-two-gradient">
           <div className="green-gradient"></div>
           <div className="red-gradient"></div>
-        </div>
+        </div> */}
         <div className="project-cover-promo-card">
-          <video src={proDesign} alt="proDesign img" autoPlay loop />
+          {/* <video src={proDesign} alt="proDesign img" autoPlay loop /> */}
+
+          <section class="section">
+          <div class="desktop-wrapper">
+            <div class="carousel reflect">
+              <ul
+                class="carousel__list"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-easing="ease"
+              >
+                <li class="carousel__item" data-pos="-2"></li>
+                <li class="carousel__item" data-pos="-1"></li>
+                <li class="carousel__item" data-pos="0"></li>
+                <li class="carousel__item" data-pos="1"></li>
+                <li class="carousel__item" data-pos="2"></li>
+              </ul>
+            </div>
+          </div>
+        </section>
         </div>
       </div>
     </div>

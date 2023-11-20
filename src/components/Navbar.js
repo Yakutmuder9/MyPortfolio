@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { logo } from "../assets/index";
+import { motion, useAnimation } from "framer-motion";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -34,10 +35,48 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollY]);
 
+  const controls = useAnimation();
+
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      controls.start({
+        paddingTop: "0px",
+        paddingBottom: "0px",
+        backgroundColor:
+          "linear-gradient(180deg, #0000007d 100%, #ffffff1a 200%)",
+        borderBottom: "1px solid #9e9d9d4a",
+        boxShadow: "0px 4px 24px 0px #23105e40",
+        backdropFilter: "blur(22.5px)",
+      });
+    } else {
+      controls.start({
+        paddingTop: "60px",
+        paddingBottom: "60px",
+        backgroundColor: "initial",
+        borderBottom: "none",
+        boxShadow: "none",
+        backdropFilter: "none",
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+
+    
+  }, []);
+
   const handleShow = () => setIsNavOpen(!isNavOpen);
 
   return (
-    <nav className={`navbar ${showNavbar ? "active" : ""}`}>
+    <motion.nav
+      initial={{ backgroundColor: "transparent" }}
+      animate={controls}
+      className={`navbar ${showNavbar ? "active" : ""}`}
+    >
       <div className="container nav-container">
         <a href="#app" className="logo">
           <img src={logo} alt="yamhub logo" />
@@ -104,7 +143,7 @@ const Navbar = () => {
           <></>
         )}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
