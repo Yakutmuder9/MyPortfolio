@@ -3,13 +3,18 @@
     padding-top: 65px;
     padding-bottom: 70vh;
     min-height: 100vh;
-    // background:rgb(0, 255, 76);
 
     @media (max-width: 768px) {
         padding-top: 50px;
+        padding-bottom: 56vh;
     }
     @media (max-width: 562px) {
         padding-top: 30px;
+        padding-bottom: 3vh;
+    }
+    @media (max-width: 392px) {
+        padding-bottom: 30vh;
+        min-height: auto;
     }
 
     .container {
@@ -55,17 +60,23 @@
             .ellipse-line {
                 $circleWidth: 35%;
                 width: $circleWidth;
-                height: 100px;
+                height: 70px;
                 transform: translateY(-50%);
                 flex-shrink: 0;
 
                 border-radius: 730px;
-                border: 5px solid #34c8e8;
+                border: 1px solid #34c8e8;
+
+        
+            }
+
+            @media (max-width: 768px) {
+                display: none;
             }
         }
 
         .notice {
-            margin-top: 30px;
+            margin-top: 60px;
             margin-bottom: 30px;
             display: flex;
             flex-direction: column;
@@ -74,7 +85,7 @@
             z-index: 12;
 
             @media (max-width: 562px) {
-                margin-top: 10px;
+                margin-top: 0px;
             }
 
             p {
@@ -86,6 +97,7 @@
                 color: #e0e0e0;
                 font-family: system-ui, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
                 white-space: nowrap;
+               
                 @media (max-width: 768px) {
                     margin-bottom: 15px;
                     margin-top: 10px;
@@ -108,54 +120,85 @@
             z-index: 12;
 
             h1 {
-                font-size: 76px;
-                font-weight: 900;
+                white-space: pre;
                 text-align: center;
-                font-family:
-                    system-ui,
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    "Segoe UI",
-                    Roboto,
-                    Oxygen,
-                    Ubuntu,
-                    Cantarell,
-                    "Open Sans",
-                    "Helvetica Neue",
-                    sans-serif;
-                background: linear-gradient(270deg, #83c4eb 0%, #fff 100%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
 
-                @media (max-width: 992px) {
-                    font-size: 64px;
-                    padding-right: 0%;
-                    max-width: 95%;
+                span {
+                    display: inline-block;
+                    position: relative;
+                    opacity: 0;
+                    transform: translateY(-100%);
+                    animation: bounce-in 0.25s cubic-bezier(0.49, 0.37, 0.53, 1.39) forwards;
+
+                    font-size: 76px;
+                    font-weight: 900;
+                    font-family:
+                        system-ui,
+                        -apple-system,
+                        BlinkMacSystemFont,
+                        "Segoe UI",
+                        Roboto,
+                        Oxygen,
+                        Ubuntu,
+                        Cantarell,
+                        "Open Sans",
+                        "Helvetica Neue",
+                        sans-serif;
+                    // background: linear-gradient(270deg, #83c4eb 0%, #fff 100%);
+                    background: linear-gradient(270deg, #88b3e4 0%, #deedf7 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    &:nth-child(23n)::after {
+                        content: "\A";
+                        white-space: pre;
+                    }
+
+                    @media (max-width: 992px) {
+                        font-size: 54px;
+                        padding-right: 0%;
+                        max-width: 95%;
+                    }
+                    @media (max-width: 768px) {
+                        font-size: 42px;
+                        max-width: 100%;
+                    }
+                    @media (max-width: 562px) {
+                        font-size: 30px;
+                    }
+                    @media (max-width: 392px) {
+                        font-size: 20px;
+                    }
                 }
-                @media (max-width: 768px) {
-                    font-size: 48px;
-                    max-width: 100%;
-                }
-                @media (max-width: 562px) {
-                    font-size: 36px;
-                }
-                @media (max-width: 392px) {
-                    font-size: 24px;
+
+                // color: #83d3ff;
+                // font-size: 4rem;
+                // margin-bottom: 4rem;
+                // font-family: "Montserrat", sans-serif;
+                // font-weight: 200;
+                // letter-spacing: -5px;
+            }
+
+            @keyframes bounce-in {
+                to {
+                    opacity: 1;
+                    transform: translateY(0%);
                 }
             }
+
             p {
                 width: 60%;
                 font-size: 16px;
                 text-align: center;
-                color: #2a404d!important;
+                color: #929496 !important;
                 margin-top: 20px;
                 margin-bottom: 10%;
                 line-height: 130%;
                 z-index: 12;
                 @media (max-width: 768px) {
                     margin-bottom: 15%;
-                    width: 80%;
+                    width: 88%;
                     font-size: 14px;
                 }
                 @media (max-width: 562px) {
@@ -194,10 +237,35 @@
                 }
             }
             @media (max-width: 392px) {
-                padding: 0px;
+                padding: 70px 0 0 0;
                 svg {
                     height: 120px;
                     width: 30%;
+                }
+            }
+
+            .svg-container {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            // .growing-path {
+            //     animation: grow 2s linear infinite;
+            // }
+
+            // @keyframes grow {
+            //     0% {
+            //         stroke-dasharray:  100% 0;
+            //     }
+            //     100% {
+            //         stroke-dasharray: 100% 100%;
+            //     }
+            // }
+
+            @keyframes grow {
+                to {
+                    stroke-dashoffset: 0;
                 }
             }
         }

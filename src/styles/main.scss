@@ -26,9 +26,8 @@
     scroll-behavior: smooth;
     color: #ffffff;
 
-    
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /*---Side Scroll Bar ---*/
@@ -50,7 +49,7 @@ body {
     width: 100%;
     height: auto;
     font-family: "Inter", sans-serif;
-    
+
     // background: #18042b;
     // background: #042425;
     // background: #233196;
@@ -66,10 +65,10 @@ body {
 }
 
 // entrance
-$bgColor:#020438;
-$boxColor:#020438;
-$waterFColor:#4D6DE3;
-$waterBColor:#C7EEFF;
+$bgColor: #020438;
+$boxColor: #020438;
+$waterFColor: #4d6de3;
+$waterBColor: #c7eeff;
 
 // body {
 //   background:$bgColor;
@@ -80,13 +79,29 @@ $waterBColor:#C7EEFF;
 .box {
     height: 280px;
     width: 280px;
-    position: absolute;
+    // position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: $boxColor;
+    
     border-radius: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scale-out-center 5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+
+    @keyframes scale-out-center {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(0);
+            opacity: 1;
+        }
+    }
     .percent {
         position: absolute;
         left: 0;
@@ -109,7 +124,8 @@ $waterBColor:#C7EEFF;
         width: 100%;
         height: 100%;
         transform: translate(0, 100%);
-        background: $waterFColor;
+        background: linear-gradient(270deg, $teal 0%, #2A00FF 77.32%);
+
         transition: all 0.3s;
         &_wave {
             width: 200%;
@@ -122,7 +138,7 @@ $waterBColor:#C7EEFF;
             }
             &_front {
                 left: 0;
-                fill: $waterFColor;
+                fill: linear-gradient(180deg, #224EF0 0%, #469AF2 100%);
                 margin-bottom: -1px;
                 animation: wave-front 0.7s infinite linear;
             }

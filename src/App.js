@@ -10,7 +10,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,6 +22,7 @@ const App = () => {
     <div className="App" id="app">
       {isLoading ? (
         <Entrance />
+
       ) : (
         <>
           <Navbar />

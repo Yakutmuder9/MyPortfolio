@@ -29,19 +29,30 @@
 			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
+
+			@media(max-width: 768px){
+				font-size: 14px;
+			}
 		}
 
 		h1 {
 			font-family: Inter;
 			font-size: 112px;
-			line-height: 112px;
+			// line-height: 112px;
 			font-style: normal;
 			font-weight: 700;
-			letter-spacing: -12.54px;
+			// letter-spacing: -12.54px;
 			background: linear-gradient(180deg, #34c8e8 0%, rgba(52, 200, 232, 0) 100%);
 			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
+
+			@media(max-width: 768px){
+				font-size: 54px;
+			}
+			@media(max-width: 392px){
+				font-size: 34px;
+			}
 		}
 	}
 	hr {

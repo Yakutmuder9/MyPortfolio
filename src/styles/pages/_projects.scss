@@ -6,7 +6,6 @@
 	padding-bottom: 20px;
 	background-image: url("./../../assets/projectsbg.png");
 
-
 	position: relative;
 	display: flex;
 	align-self: center;
@@ -21,16 +20,28 @@
 			text-align: center;
 			width: 80%;
 
+			@media (max-width: 768px) {
+				width: 96%;
+			}
 			h2 {
-                color: $teal;
+				color: $teal;
 				font-size: 42px;
 				margin-bottom: 15px;
+
+				@media (max-width: 768px) {
+					font-size: 24px;
+				}
 			}
 			p {
-                color: #b2ccfd;
+				color: #b2ccfd;
 				margin-bottom: 25px;
 				font-size: 20px;
-				width: 90%;
+				padding: 0 10%;
+				text-align: center;
+				@media (max-width: 768px) {
+					font-size: 14px;
+					padding: 0 0;
+				}
 			}
 		}
 
@@ -56,9 +67,17 @@
 						font-size: 32px;
 						color: $teal;
 						margin-bottom: 10px;
+						
+						@media (max-width: 768px) {
+							font-size: 24px;
+						}
 					}
 					p {
 						color: #b2ccfd;
+
+						@media (max-width: 768px) {
+							font-size: 14px;
+						}
 					}
 				}
 			}
@@ -86,9 +105,10 @@
 				background: #001c2e34;
 
 				* {
-				    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><circle cx="40" cy="40" r="33" fill="white"  /><text x="50%" y="50%" fill="black" font-size="13" font-family="sans-serif" text-anchor="middle">Swipe</text></svg>')
-				            40 40,
-				        auto;
+					cursor:
+						url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><circle cx="40" cy="40" r="33" fill="white"  /><text x="50%" y="50%" fill="black" font-size="13" font-family="sans-serif" text-anchor="middle">Swipe</text></svg>')
+							40 40,
+						auto;
 				}
 				&:hover {
 					background: #01487734;
@@ -97,7 +117,7 @@
 				}
 				img {
 					width: 100%;
-					border-radius: 28px 60px  28px 80px;
+					border-radius: 28px 60px 28px 80px;
 				}
 				.work-card-text-cont {
 					padding-top: 20px;
