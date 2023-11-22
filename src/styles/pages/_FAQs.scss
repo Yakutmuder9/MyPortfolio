@@ -16,7 +16,9 @@
         .faqs-header {
             text-align: center;
             width: 80%;
-
+            @media (max-width: 768px) {
+                width: 98%;
+            }
             h2 {
                 font-size: 28px;
                 margin-bottom: 15px;
@@ -32,6 +34,7 @@
                 padding: 5px 8%;
                 @media (max-width: 768px) {
                     padding: 5px 8px;
+                    font-size: medium;
                 }
             }
         }
@@ -51,7 +54,7 @@
             width: 70%;
 
             @media (max-width: 768px) {
-                width: 90%;
+                width: 98%;
             }
 
             .accordion {
@@ -79,6 +82,10 @@
                     align-items: center;
                     justify-content: space-between;
                     cursor: pointer;
+
+                    @media (max-width: 768px) {
+                        font-size: 22px;
+                    }
 
                     h6 {
                         margin: 0;

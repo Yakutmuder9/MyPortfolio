@@ -61,14 +61,17 @@
             .ellipse-line {
                 $circleWidth: 35%;
                 width: $circleWidth;
-                height: 70px;
+                height: 60px;
                 transform: translateY(-50%);
                 flex-shrink: 0;
+                background: #0000003f;
 
                 border-radius: 730px;
                 border: 1px solid #34c8e8;
-
-        
+                @media (max-width: 1200px) {
+                    width: 50%;
+                    background: #0000006c;
+                }
             }
 
             @media (max-width: 768px) {
@@ -98,20 +101,9 @@
                 color: #e0e0e0;
                 font-family: system-ui, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
                 white-space: nowrap;
-               
+
                 @media (max-width: 768px) {
-                    margin-bottom: 15px;
-                    margin-top: 10px;
-                    font-size: 16px;
-                }
-                @media (max-width: 562px) {
-                    font-size: 14px;
-                }
-                @media (max-width: 392px) {
-                    font-size: 12px;
-                }
-                @media (max-width: 262px) {
-                    font-size: 8px;
+                    display: none;
                 }
             }
         }
@@ -127,6 +119,9 @@
                 white-space: pre;
                 text-align: center;
 
+                @media (max-width: 768px) {
+                    margin-top: 40px;
+                }
                 span {
                     display: inline-block;
                     position: relative;
@@ -157,6 +152,7 @@
                     &:nth-child(23n)::after {
                         content: "\A";
                         white-space: pre;
+                        color: red;
                     }
 
                     @media (max-width: 992px) {
@@ -165,18 +161,18 @@
                         max-width: 95%;
                     }
                     @media (max-width: 768px) {
-                        font-size: 42px;
+                        font-size: 44px;
                         max-width: 100%;
                     }
                     @media (max-width: 562px) {
                         font-size: 36px;
                     }
-                    @media (max-width: 392px) {
-                        font-size: 24px;
-                    }
-                    @media (max-width: 262px) {
-                        font-size: 18px;
-                    }
+                    // @media (max-width: 392px) {
+                    //     font-size: 24px;
+                    // }
+                    // @media (max-width: 262px) {
+                    //     font-size: 18px;
+                    // }
                 }
 
                 // color: #83d3ff;
@@ -198,7 +194,7 @@
                 width: 60%;
                 font-size: 16px;
                 text-align: center;
-                color: #929496 !important;
+                color: #8cd9f8 !important;
                 margin-top: 20px;
                 margin-bottom: 10%;
                 line-height: 130%;
@@ -206,13 +202,7 @@
                 @media (max-width: 768px) {
                     margin-bottom: 15%;
                     width: 88%;
-                    font-size: 14px;
-                }
-                @media (max-width: 562px) {
-                    font-size: 12px;
-                }
-                @media (max-width: 392px) {
-                    font-size: 10px;
+                    font-size: small;
                 }
             }
         }
