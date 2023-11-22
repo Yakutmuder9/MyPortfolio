@@ -11,7 +11,8 @@ import blPro from "./14.jpg";
 import ogPro from "./11.jpg";
 import gdPro from "./12.jpg";
 import prPro from "./28.jpg";
-
+import qand from "./34.png";
+import question from "./33.png";
 export {
   logo,
   footWave,
@@ -26,4 +27,6 @@ export {
   ogPro,
   gdPro,
   prPro,
+  qand,
+  question,
 };

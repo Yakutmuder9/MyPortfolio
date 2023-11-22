@@ -169,7 +169,6 @@ const Landing = () => {
       path.style.strokeDasharray = length;
       path.style.strokeDashoffset = length;
 
-      // Animation properties
       path.style.animation = 'grow 5s ease-in-out forwards infinite';
 
       // Remove animation after it completes
@@ -180,7 +179,7 @@ const Landing = () => {
   }, []);
 
   return (
-    <div className="landing">
+    <div className="landing" id="landing">
       <div className="container">
         <img className="bg-video" src={spots} />
         <div className="center-ellipse-line">

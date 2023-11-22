@@ -31,10 +31,66 @@
 				@media (max-width: 768px) {
 					font-size: 24px;
 				}
+
+				.magic {
+					display: inline-block;
+					position: relative;
+					color: $teal;
+					font-size: 54px;
+
+					@media (max-width: 768px) {
+						font-size: 32px;
+					}
+					.magic-star {
+						--size: clamp(20px, 1.5vw, 30px);
+						animation: scale 0.9s ease forwards;
+						display: block;
+						left: var(--star-left);
+						position: absolute;
+						top: var(--star-top);
+						width: 15px;
+						transform: translateY(50%);
+						svg {
+							animation: rotate 5s linear infinite;
+							display: block;
+							opacity: 1;
+							transform: translateY(50px);
+							path {
+								fill: #8597fd;
+							}
+						}
+					}
+				}
+
+				@keyframes background-pan {
+					from {
+						background-position: 0 center;
+					}
+					to {
+						background-position: -500% center;
+					}
+				}
+				@keyframes scale {
+					from,
+					to {
+						transform: scale(0);
+					}
+					50% {
+						transform: scale(1);
+					}
+				}
+				@keyframes rotate {
+					from {
+						transform: rotate(0);
+					}
+					to {
+						transform: rotate(180deg);
+					}
+				}
 			}
 			p {
 				color: #b2ccfd;
-				margin-bottom: 25px;
+				margin-bottom: 40px;
 				font-size: 20px;
 				padding: 0 10%;
 				text-align: center;
@@ -67,7 +123,7 @@
 						font-size: 32px;
 						color: $teal;
 						margin-bottom: 10px;
-						
+
 						@media (max-width: 768px) {
 							font-size: 24px;
 						}
@@ -98,11 +154,12 @@
 			}
 
 			.slide-card {
-				padding: 40px 15px;
+				padding: 20px 15px 10px 15px;
 				border-radius: 12px;
 				transition: all 0.3s ease-in-out;
 				box-shadow: 0 6px 26px 6px #000000b7;
 				background: #001c2e34;
+				border: 0.1px solid rgba(255, 255, 255, 0.185);
 
 				* {
 					cursor:
@@ -121,7 +178,7 @@
 				}
 				.work-card-text-cont {
 					padding-top: 20px;
-					margin-bottom: 5vh;
+					padding-bottom: 20px;
 					h4 {
 						color: $teal;
 						font-size: 20px;

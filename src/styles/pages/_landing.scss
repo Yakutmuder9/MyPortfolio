@@ -1,7 +1,8 @@
 .landing {
     width: 100%;
     padding-top: 65px;
-    padding-bottom: 70vh;
+    // padding-bottom: 70vh;
+    padding-bottom: 700px;
     min-height: 100vh;
 
     @media (max-width: 768px) {
@@ -76,8 +77,8 @@
         }
 
         .notice {
-            margin-top: 60px;
-            margin-bottom: 30px;
+            margin-top: 70px;
+            margin-bottom: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -85,7 +86,7 @@
             z-index: 12;
 
             @media (max-width: 562px) {
-                margin-top: 0px;
+                margin-top: 50px;
             }
 
             p {
@@ -101,13 +102,16 @@
                 @media (max-width: 768px) {
                     margin-bottom: 15px;
                     margin-top: 10px;
-                    font-size: 14px;
+                    font-size: 16px;
                 }
                 @media (max-width: 562px) {
-                    font-size: 12px;
+                    font-size: 14px;
                 }
                 @media (max-width: 392px) {
-                    font-size: 10px;
+                    font-size: 12px;
+                }
+                @media (max-width: 262px) {
+                    font-size: 8px;
                 }
             }
         }
@@ -165,10 +169,13 @@
                         max-width: 100%;
                     }
                     @media (max-width: 562px) {
-                        font-size: 30px;
+                        font-size: 36px;
                     }
                     @media (max-width: 392px) {
-                        font-size: 20px;
+                        font-size: 24px;
+                    }
+                    @media (max-width: 262px) {
+                        font-size: 18px;
                     }
                 }
 

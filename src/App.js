@@ -8,9 +8,10 @@ import Brands from "./pages/Brands";
 import Skills from "./pages/Skills";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import FAQs from "./pages/FAQs";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,7 +23,6 @@ const App = () => {
     <div className="App" id="app">
       {isLoading ? (
         <Entrance />
-
       ) : (
         <>
           <Navbar />
@@ -33,6 +33,7 @@ const App = () => {
           <Skills />
           <Projects />
           <Brands />
+          <FAQs />
           <Footer />
         </>
       )}
