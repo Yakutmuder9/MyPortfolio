@@ -118,6 +118,8 @@
             h1 {
                 white-space: pre;
                 text-align: center;
+                letter-spacing: -1.5px;
+
 
                 @media (max-width: 768px) {
                     margin-top: 40px;
@@ -167,20 +169,15 @@
                     @media (max-width: 562px) {
                         font-size: 36px;
                     }
-                    // @media (max-width: 392px) {
-                    //     font-size: 24px;
-                    // }
-                    // @media (max-width: 262px) {
-                    //     font-size: 18px;
-                    // }
+                    @media (max-width: 392px) {
+                        font-size: 24px;
+                    }
+                    @media (max-width: 262px) {
+                        font-size: 18px;
+                    }
                 }
 
-                // color: #83d3ff;
-                // font-size: 4rem;
-                // margin-bottom: 4rem;
-                // font-family: "Montserrat", sans-serif;
-                // font-weight: 200;
-                // letter-spacing: -5px;
+             
             }
 
             @keyframes bounce-in {
@@ -199,10 +196,14 @@
                 margin-bottom: 10%;
                 line-height: 130%;
                 z-index: 12;
+
                 @media (max-width: 768px) {
                     margin-bottom: 15%;
                     width: 88%;
                     font-size: small;
+                }
+                @media (max-width: 392px) {
+                    font-size: x-small;
                 }
             }
         }
