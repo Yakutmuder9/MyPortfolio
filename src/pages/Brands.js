@@ -69,7 +69,6 @@ const Brands = () => {
     <div className="brands">
       <div className="container">
         <video src={proDesign} alt="proDesign img" autoPlay loop />
-        {/* <canvas id="hero-lightpass" ref={canvasRef} /> */}
         <canvas id="hero-lightpass" ref={canvasRef} />
       </div>
     </div>
