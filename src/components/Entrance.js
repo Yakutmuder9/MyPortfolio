@@ -54,10 +54,8 @@ const Animation = () => {
         </div>
         <div id="water" className="water" ref={waterRef}>
           <svg viewBox="0 0 560 20" className="water_wave water_wave_back">
-            {/* <use xlink:href="#wave"></use> */}
           </svg>
           <svg viewBox="0 0 560 20" className="water_wave water_wave_front">
-            {/* <use xlink:href="#wave"></use> */}
           </svg>
         </div>
       </div>
