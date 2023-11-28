@@ -1,5 +1,5 @@
 import { proDesign } from "../assets/index";
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
 
 const Brands = () => {
   const html = document.documentElement;
