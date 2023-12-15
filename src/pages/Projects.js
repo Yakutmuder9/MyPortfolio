@@ -12,27 +12,30 @@ const projects = [
     code: 41,
     month: "May",
     isHovered: false,
-    title: "My previous portfolio v.1",
+    title: "CarCommet car shop v.1",
     disc: "I had planned for a simple layout yet very modern and minimalasatic to help me explain all my work and process and the result turned preety good.",
     imgUrl: gdPro,
+    Url: "https://carcomet.netlify.app/#",
   },
   {
     id: 2,
     code: 42,
     month: "May",
     isHovered: true,
-    title: "My previous portfolio v.1",
+    title: "Go Furniture store v.1",
     disc: "I had planned for a simple layout yet very modern and minimalasatic to help me explain all my work and process and the result turned preety good.",
     imgUrl: pkPro,
+    Url: "https://go-furniture.netlify.app/",
   },
   {
     id: 3,
     code: 43,
     month: "May",
     isHovered: false,
-    title: "My previous portfolio v.1",
+    title: "EM Architect  v.1",
     disc: "I had planned for a simple layout yet very modern and minimalasatic to help me explain all my work and process and the result turned preety good.",
     imgUrl: prPro,
+    Url: "https://archemu.netlify.app/",
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ const projects = [
     title: "My previous portfolio v.1",
     disc: "I had planned for a simple layout yet very modern and minimalasatic to help me explain all my work and process and the result turned preety good.",
     imgUrl: gdPro,
+    Url: "https://carcomet.netlify.app/#",
   },
   {
     id: 5,
@@ -51,6 +55,7 @@ const projects = [
     title: "My previous portfolio v.1",
     disc: "I had planned for a simple layout yet very modern and minimalasatic to help me explain all my work and process and the result turned preety good.",
     imgUrl: pkPro,
+    Url: "https://go-furniture.netlify.app/",
   },
   {
     id: 6,
@@ -60,6 +65,7 @@ const projects = [
     title: "My previous portfolio v.1",
     disc: "I had planned for a simple layout yet very modern and minimalasatic to help me explain all my work and process and the result turned preety good.",
     imgUrl: prPro,
+    Url: "https://archemu.netlify.app/",
   },
 ];
 
@@ -147,31 +153,40 @@ const Projects = () => {
             ref={sideTextRef}
             animate={sideTextAnimation}
           >
-            <a href=""></a>
-            <img src={blPro} alt="" />
-            <div className="work-card-text-cont">
-              <h3>My previous portfolio v.1 </h3>
-              <p>
-                I had planned for a simple layout yet very modern and
-                minimalasatic to help me explain all my work and process and the
-                result turned preety good.
-              </p>
-            </div>
+            <a
+              href="https://ahmedin-nodebucket.onrender.com/#/"
+              target="_blank"
+            >
+              <img src={blPro} alt="" />
+              <div className="work-card-text-cont">
+                <h3>My School portfolio v.1 </h3>
+                <p>
+                  I had planned for a simple layout yet very modern and
+                  minimalasatic to help me explain all my work and process and
+                  the result turned preety good.
+                </p>
+              </div>
+            </a>
           </motion.div>
           <motion.div
             className="work-card"
             ref={formRef}
             animate={formAnimation}
           >
-            <img src={ogPro} alt="" />
-            <div className="work-card-text-cont">
-              <h3>My previous portfolio v.1 </h3>
-              <p>
-                I had planned for a simple layout yet very modern and
-                minimalasatic to help me explain all my work and process and the
-                result turned preety good.
-              </p>
-            </div>
+            <a
+              href="https://yakutmuder9.github.io/Personal-Portfolio/index.html"
+              target="_blank"
+            >
+              <img src={ogPro} alt="" />
+              <div className="work-card-text-cont">
+                <h3>My previous portfolio v.1 </h3>
+                <p>
+                  I had planned for a simple layout yet very modern and
+                  minimalasatic to help me explain all my work and process and
+                  the result turned preety good.
+                </p>
+              </div>
+            </a>
           </motion.div>
         </div>
 
@@ -196,11 +211,13 @@ const Projects = () => {
                     // ref={processItems[index].ref.ref}
                     // animate={processItems[index].animation}
                   >
-                    <img src={item.imgUrl} alt="" />
-                    <div className="work-card-text-cont">
-                      <h4>{item.title} </h4>
-                      <p>{item.disc}</p>
-                    </div>
+                    <a href={item.Url} target="_blank">
+                      <img src={item.imgUrl} alt="" />
+                      <div className="work-card-text-cont">
+                        <h4>{item.title} </h4>
+                        <p>{item.disc}</p>
+                      </div>
+                    </a>
                   </motion.div>
                 </SwiperSlide>
               );
@@ -216,4 +233,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

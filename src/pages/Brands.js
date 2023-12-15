@@ -1,5 +1,5 @@
 import { proDesign } from "../assets/index";
-import {  useRef } from "react";
+import { useRef } from "react";
 
 const Brands = () => {
   const html = document.documentElement;
@@ -68,6 +68,13 @@ const Brands = () => {
   return (
     <div className="brands">
       <div className="container">
+        <div className="brand-header">
+          <br />
+          <h2>
+            Product <span>DESIGNES</span>
+          </h2>
+          <p>I develop the visual and functional aspects of products, ensuring they meet the needs of users and align with business goals.</p>
+        </div>
         <video src={proDesign} alt="proDesign img" autoPlay loop />
         <canvas id="hero-lightpass" ref={canvasRef} />
       </div>
@@ -76,4 +83,3 @@ const Brands = () => {
 };
 
 export default Brands;
-

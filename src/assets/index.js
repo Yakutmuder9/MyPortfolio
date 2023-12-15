@@ -13,11 +13,19 @@ import prPro from "./28.jpg";
 import qand from "./34.png";
 import question from "./33.png";
 import carcommet from "./carcommet.png";
+import bookstore from "./bookstore.png";
+import schoolPortfolio from "./schoolPortfolio.png";
+import nodebucket from "./nodebucket.png";
+import zilla from "./zilla.png";
 export {
   logo,
   footWave,
-  proDesign,
   carcommet,
+  bookstore,
+  schoolPortfolio,
+  nodebucket,
+  zilla,
+  proDesign,
   whatIDo,
   landing,
   spots,

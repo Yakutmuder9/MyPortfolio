@@ -37,7 +37,7 @@ const accordionItems = [
     id: 1,
     title: "What motivates me to design such amazing websites?",
     content:
-      "Accordion Content 1  Here are some of the questions that I have got asked frequently. So I have added them here for you. If you have any more questions/doubts you can always contact me below. ",
+      "The creative process, seeing progress in my work, and constantly learning new skills fuel my motivation to design amazing websites.. ",
   },
   {
     id: 2,

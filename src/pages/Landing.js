@@ -3,7 +3,14 @@ import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import { spots } from "../assets/index";
-import { proDesign,carcommet } from "../assets/index";
+import {
+  proDesign,
+  carcommet,
+  bookstore,
+  schoolPortfolio,
+  nodebucket,
+  zilla,
+} from "../assets/index";
 import { gsap } from "gsap/gsap-core";
 import SplitType from "split-type";
 
@@ -176,26 +183,26 @@ const Landing = () => {
     });
   }, []);
 
-    // State to manage carousel images
-    const [carouselImages, setCarouselImages] = useState([
-      carcommet,
-      "https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/06/Edewor-Onyedikas-portfolio-website.webp",
-      "https://lh3.googleusercontent.com/f-QNvdwEyO6tsiIFnKXHzJUQdHzGIZ_cIFw3Ivv9361u9KiKolmPwwh0O2mZBP4IpommBoxF10tItlLNcMjr-cFro30i_AFKsiXz863SYCUjnrF6x5Sd0rkE8Am7_7B5yDz1InNB",
-      "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/310861512/original/52f4fe82d910b61d54052c24e92c605495bb9353/create-personal-portfolio-website-in-24-hours.jpg",
-      "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/310861512/original/52f4fe82d910b61d54052c24e92c605495bb9353/create-personal-portfolio-website-in-24-hours.jpg",
-    ]);
-  
-    // Update carousel images after a certain time or event
-    useEffect(() => {
-      const intervalId = setInterval(() => {
-        // Rotate images, for example
-        const rotatedImages = [...carouselImages.slice(1), carouselImages[0]];
-        setCarouselImages(rotatedImages);
-      }, 5000);
-  
-      // Clean up interval on component unmount
-      return () => clearInterval(intervalId);
-    }, [carouselImages]);
+  // State to manage carousel images
+  const [carouselImages, setCarouselImages] = useState([
+    carcommet,
+    zilla,
+    nodebucket,
+    schoolPortfolio,
+    bookstore,
+  ]);
+
+  // Update carousel images after a certain time or event
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Rotate images, for example
+      const rotatedImages = [...carouselImages.slice(1), carouselImages[0]];
+      setCarouselImages(rotatedImages);
+    }, 5000);
+
+    // Clean up interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [carouselImages]);
 
   return (
     <div className="landing" id="landing">
