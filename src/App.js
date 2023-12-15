@@ -11,7 +11,7 @@ import Projects from "./pages/Projects";
 import FAQs from "./pages/FAQs";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {

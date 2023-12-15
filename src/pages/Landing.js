@@ -3,9 +3,8 @@ import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import { spots } from "../assets/index";
-import { proDesign } from "../assets/index";
+import { proDesign,carcommet } from "../assets/index";
 import { gsap } from "gsap/gsap-core";
-// import { SplitText } from "gsap/SplitText"
 import SplitType from "split-type";
 
 const Landing = () => {
@@ -160,23 +159,43 @@ const Landing = () => {
     resetInterval();
   }, []);
 
-
   useEffect(() => {
-    const growingPaths = document.querySelectorAll('.growing-path');
+    const growingPaths = document.querySelectorAll(".growing-path");
 
     growingPaths.forEach((path) => {
       const length = path.getTotalLength();
       path.style.strokeDasharray = length;
       path.style.strokeDashoffset = length;
 
-      path.style.animation = 'grow 5s ease-in-out forwards infinite';
+      path.style.animation = "grow 5s ease-in-out forwards infinite";
 
       // Remove animation after it completes
-      path.addEventListener('animationend', () => {
-        path.style.animation = 'none';
+      path.addEventListener("animationend", () => {
+        path.style.animation = "none";
       });
     });
   }, []);
+
+    // State to manage carousel images
+    const [carouselImages, setCarouselImages] = useState([
+      carcommet,
+      "https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/06/Edewor-Onyedikas-portfolio-website.webp",
+      "https://lh3.googleusercontent.com/f-QNvdwEyO6tsiIFnKXHzJUQdHzGIZ_cIFw3Ivv9361u9KiKolmPwwh0O2mZBP4IpommBoxF10tItlLNcMjr-cFro30i_AFKsiXz863SYCUjnrF6x5Sd0rkE8Am7_7B5yDz1InNB",
+      "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/310861512/original/52f4fe82d910b61d54052c24e92c605495bb9353/create-personal-portfolio-website-in-24-hours.jpg",
+      "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/310861512/original/52f4fe82d910b61d54052c24e92c605495bb9353/create-personal-portfolio-website-in-24-hours.jpg",
+    ]);
+  
+    // Update carousel images after a certain time or event
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        // Rotate images, for example
+        const rotatedImages = [...carouselImages.slice(1), carouselImages[0]];
+        setCarouselImages(rotatedImages);
+      }, 5000);
+  
+      // Clean up interval on component unmount
+      return () => clearInterval(intervalId);
+    }, [carouselImages]);
 
   return (
     <div className="landing" id="landing">
@@ -202,90 +221,6 @@ const Landing = () => {
         </div>
 
         <div className="curve-lines">
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="203"
-            height="354"
-            viewBox="0 0 203 354"
-            fill="none"
-          >
-            <path
-              d="M3.60787 353.667C3.60787 353.667 -11.3922 237.081 64.1078 200.733C139.608 164.385 200.608 1.84991 200.608 1.84991"
-              stroke="url(#paint0_linear_245_617)"
-              stroke-width="5"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_245_617"
-                x1="10.6078"
-                y1="273.428"
-                x2="268.125"
-                y2="108.576"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#34C8E8" />
-                <stop offset="1" stop-color="#34C8E8" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-          </svg> */}
-
-          {/* <div className="svg-container">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="203"
-              height="354"
-              viewBox="0 0 203 354"
-              fill="none"
-            >
-              <path
-                className="growing-path"
-                d="M3.60787 353.667C3.60787 353.667 -11.3922 237.081 64.1078 200.733C139.608 164.385 200.608 1.84991 200.608 1.84991"
-                stroke="url(#paint0_linear_245_617)"
-                stroke-width="5"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_245_617"
-                  x1="10.6078"
-                  y1="273.428"
-                  x2="268.125"
-                  y2="108.576"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#34C8E8" />
-                  <stop offset="1" stop-color="#34C8E8" stop-opacity="0" />
-                </linearGradient>
-              </defs>
-            </svg>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="203"
-              height="354"
-              viewBox="0 0 203 354"
-              fill="none"
-            >
-              <path
-                d="M199.287 353.667C199.287 353.667 214.287 237.081 138.787 200.733C63.2872 164.385 2.28718 1.84991 2.28718 1.84991"
-                stroke="url(#paint0_linear_245_618)"
-                stroke-width="5"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_245_618"
-                  x1="192.287"
-                  y1="273.428"
-                  x2="-65.2298"
-                  y2="108.576"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#34C8E8" />
-                  <stop offset="1" stop-color="#34C8E8" stop-opacity="0" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div> */}
-
           <div className="svg-container">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -359,11 +294,20 @@ const Landing = () => {
                   data-aos-duration="1000"
                   data-aos-easing="ease"
                 >
-                  <li class="carousel__item" data-pos="-2"></li>
+                  {/* <li class="carousel__item" data-pos="-2" style={{ backgroundImage: 'url("https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/310861512/original/52f4fe82d910b61d54052c24e92c605495bb9353/create-personal-portfolio-website-in-24-hours.jpg")' }}></li>
                   <li class="carousel__item" data-pos="-1"></li>
                   <li class="carousel__item" data-pos="0"></li>
                   <li class="carousel__item" data-pos="1"></li>
-                  <li class="carousel__item" data-pos="2"></li>
+                  <li class="carousel__item" data-pos="2"></li> */}
+
+                  {carouselImages.map((image, index) => (
+                    <li
+                      key={index}
+                      className="carousel__item"
+                      data-pos={index - 2}
+                      style={{ backgroundImage: `url("${image}")` }}
+                    ></li>
+                  ))}
                 </ul>
               </div>
             </div>
