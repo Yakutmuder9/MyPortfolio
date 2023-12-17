@@ -62,7 +62,7 @@ const projects = [
     code: 46,
     month: "May",
     isHovered: false,
-    title: "My previous portfolio v.1",
+    title: "EM Architect  v.1",
     disc: "I had planned for a simple layout yet very modern and minimalasatic to help me explain all my work and process and the result turned preety good.",
     imgUrl: prPro,
     Url: "https://archemu.netlify.app/",
