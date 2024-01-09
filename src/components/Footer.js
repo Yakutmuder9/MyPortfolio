@@ -26,7 +26,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="https://dribbble.com/yakut9/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22yakut9%22&utm_content=%22About%20yakut9%22&utm_medium=Social_Share"
+                      href="#"
                       target="_blank"
                     >
                       Dribbble
@@ -35,13 +35,13 @@ const Footer = () => {
                 </ul>
                 <ul className="sla-dis-team">
                   <li>
-                    <a href="https://discord.gg/jEjGzsD6" target="_blank">
+                    <a href="#" target="_blank">
                       Discord
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://join.slack.com/t/yamhub/shared_invite/zt-250tej6na-aBwbHkPf_jj2ky3PBCXRag"
+                      href="#"
                       target="_blank"
                     >
                       Slack
