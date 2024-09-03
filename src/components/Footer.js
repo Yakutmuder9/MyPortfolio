@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
 
           <div className="foot-right">
-            <a href="tel:4455913269">
+            <a href="tel:6674337658">
               <div className="foot-pho">
                 <div className="pho-ico">
                   <FiPhoneForwarded />
